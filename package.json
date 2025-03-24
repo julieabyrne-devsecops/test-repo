@@ -1,0 +1,15 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "A simple JavaScript project for testing purposes",
+  "main": "test-sample.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
