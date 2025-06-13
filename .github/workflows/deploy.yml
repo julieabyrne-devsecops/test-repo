@@ -17,13 +17,19 @@ jobs:
 
       - name: Mark deployment as successful
         run: echo "Deployment to prod successful!"
+
+      - name: Send deployment to Swarmia
+        if: success()
+        run: |
+          JSON_STRING=$( jq --null-input --compact-output \
+            --arg version "${{ github.sha }}" \
+            --arg appName "<YOUR_APP>" \
+            --arg environment "production" \
+            --arg commitSha "${{ github.sha }}" \
+            --arg repositoryFullName "${{ github.repository }}" \
+            '{"version": $version, "appName": $appName, "environment": $environment, "commitSha": $commitSha, "repositoryFullName": $repositoryFullName}' )    curl -H "Authorization: ${{ secrets.SWARMIA_DEPLOYMENTS_AUTHORIZATION }}" \
+            -H "Content-Type: application/json" \
+            -d "$JSON_STRING" \
+            https://hook.swarmia.com/deployments
   
-  send-deployment-to-swarmia:
-    name: Send deployment to Swarmia
-    uses: ./.github/workflows/send-deploy.yml
-    needs: deploy
-    with:
-      app-name: test-app
-      environment: 'production'
-    secrets:
-      token: ${{ secrets.SWARMIA_DEPLOYMENTS_AUTHORIZATION }}
+  
