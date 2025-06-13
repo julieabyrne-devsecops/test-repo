@@ -10,10 +10,10 @@ jobs:
     name: Deploy to Prod
     runs-on: ubuntu-latest
     environment:
-      name: prod
+      name: production
     steps:
       - name: Print deployment message
-        run: echo "deploying to prod"
+        run: echo "deploying to production"
 
       - name: Mark deployment as successful
         run: echo "Deployment to prod successful!"
