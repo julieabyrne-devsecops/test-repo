@@ -20,7 +20,7 @@ jobs:
   
   send-deployment-to-swarmia:
     name: Send deployment to Swarmia
-    uses: ./.github/workflows/swarmia-deployment.yml
+    uses: ./.github/workflows/send-deploy.yml
     needs: deploy
     with:
       app-name: test-app
