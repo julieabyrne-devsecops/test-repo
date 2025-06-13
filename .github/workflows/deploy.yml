@@ -1,0 +1,29 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Prod
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Print deployment message
+        run: echo "deploying to prod"
+
+      - name: Mark deployment as successful
+        run: echo "Deployment to prod successful!"
+  
+  send-deployment-to-swarmia:
+    name: Send deployment to Swarmia
+    uses: ./.github/workflows/swarmia-deployment.yml
+    needs: deploy
+    with:
+      app-name: test-app
+      environment: 'production'
+    secrets:
+      token: ${{ secrets.SWARMIA_DEPLOYMENTS_AUTHORIZATION }}
