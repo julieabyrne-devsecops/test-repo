@@ -27,7 +27,9 @@ jobs:
             --arg environment "production" \
             --arg commitSha "${{ github.sha }}" \
             --arg repositoryFullName "${{ github.repository }}" \
-            '{"version": $version, "appName": $appName, "environment": $environment, "commitSha": $commitSha, "repositoryFullName": $repositoryFullName}' )    curl -H "Authorization: ${{ secrets.SWARMIA_DEPLOYMENTS_AUTHORIZATION }}" \
+            '{"version": $version, "appName": $appName, "environment": $environment, "commitSha": $commitSha, "repositoryFullName": $repositoryFullName}' )    
+            echo $JSON_STRING
+            curl -H "Authorization: ${{ secrets.SWARMIA_DEPLOYMENTS_AUTHORIZATION }}" \
             -H "Content-Type: application/json" \
             -d "$JSON_STRING" \
             https://hook.swarmia.com/deployments
