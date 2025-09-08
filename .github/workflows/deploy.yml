@@ -23,7 +23,7 @@ jobs:
         run: |
           JSON_STRING=$( jq --null-input --compact-output \
             --arg version "${{ github.sha }}" \
-            --arg appName "test-app2" \
+            --arg appName "test-app3" \
             --arg environment "production" \
             --arg commitSha "${{ github.sha }}" \
             --arg repositoryFullName "${{ github.repository }}" \
