@@ -22,7 +22,7 @@ jobs:
         if: success()
         run: |
           JSON_STRING=$( jq --null-input --compact-output \
-            --arg version "v2.0" \
+            --arg version "v1.0" \
             --arg appName "test-app3" \
             --arg environment "production" \
             --arg commitSha "${{ github.sha }}" \
