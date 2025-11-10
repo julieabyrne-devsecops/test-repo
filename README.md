@@ -10,3 +10,5 @@ special Halloween feature is being released! - needs fixing with a hotfix
 linear project feature
 
 another linear issue
+
+new feature 1
