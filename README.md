@@ -15,4 +15,4 @@ new feature 1
 
 new feature 2
 
-the best feature ever!
+the best feature ever! - reverting this because it was not, in fact, the best feature ever.
