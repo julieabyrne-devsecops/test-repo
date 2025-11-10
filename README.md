@@ -10,5 +10,3 @@ special Halloween feature is being released! - needs fixing with a hotfix
 linear project feature
 
 another linear issue
-
-test deployment to be reverted
