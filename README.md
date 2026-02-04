@@ -6,4 +6,17 @@ change for v1.2 - reverting 1.0 and going back to 1.0
 special Halloween feature is being released! - needs fixing with a hotfix
 
 1031 special feature
+
 very, very special haha!
+
+
+linear project feature
+
+another linear issue
+
+new feature 1
+
+new feature 2
+
+the best feature ever! - reverting this because it was not, in fact, the best feature ever.
+
